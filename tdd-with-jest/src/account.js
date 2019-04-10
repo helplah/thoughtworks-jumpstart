@@ -1,4 +1,5 @@
 const account = {
+  // change balance to 5000 and 0 to test conditional deposit and withdraw
   balance: 500,
 
   getBalance() {
@@ -6,11 +7,15 @@ const account = {
   },
 
   deposit(amount) {
-    this.balance = this.balance + amount;
+    if (this.balance < 5000) {
+      this.balance = this.balance + amount;
+    }
   },
 
   withdraw(amount) {
-    this.balance = this.balance - amount;
+    if (this.balance > 0) {
+      this.balance = this.balance - amount;
+    }
   },
 };
 
